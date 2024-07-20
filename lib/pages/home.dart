@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import '/components/propertycard.dart';
 import '/components/searchandfilter.dart';
 import '/components/loc_profile.dart';
@@ -69,7 +70,7 @@ class BestTab extends StatelessWidget {
         children: [
           CarouselSlider(
               options: CarouselOptions(
-                height: 400.0,
+                height: 490.0,
                 enableInfiniteScroll: true,
                 autoPlay: true,
                 enlargeCenterPage: true,
@@ -91,21 +92,27 @@ class BestTab extends StatelessWidget {
                   );
                 });
               })),
-          ListView.builder(
-            itemCount: 4,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: AgentCard(
-                  index: 3,
-                  Name: "James Can",
-                  rating: '4.9',
-                  AgentImage: "House1.png",
-                ),
-              );
-            },
-          )
+          Gap(24),
+          Container(
+            height: 164,
+            child: ListView.builder(
+              itemCount: 4,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.only(left: 16),
+                  child: AgentCard(
+                    index: 3,
+                    Name: "James Can",
+                    rating: '4.9',
+                    AgentImage: "House1.png",
+                  ),
+                );
+              },
+            ),
+          ),
+          Gap(24),
+
         ],
       ),
     );

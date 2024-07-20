@@ -43,7 +43,7 @@ class LocProfile extends StatelessWidget {
                   transitionsBuilder: (context, animation, secondaryAnimation, child) {
                     const begin = Offset(1, -0.0);
                     const end = Offset.zero;
-                    const curve = Curves.ease;
+                    const curve = Curves.fastOutSlowIn;
 
                     final tween = Tween(begin: begin, end: end);
                     final curvedAnimation = CurvedAnimation(
@@ -58,9 +58,23 @@ class LocProfile extends StatelessWidget {
                   },),
               );
             },
-            child: const CircleAvatar(
-              backgroundColor: Color(0XFFC4C4C4),
-              backgroundImage: NetworkImage('https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/6ad5332ac3cc3ab5a42d1693e6b96f11-813814511665335799449/JPEG_20221009_181623_87510738303705397.jpg'),
+            child: Row(
+              children: [
+                IconButton(
+                  iconSize: 24,
+                  icon: const Icon(Icons.search),
+                  onPressed: () {
+                    // ...
+                  },
+
+                ),
+                Gap(4),
+                const CircleAvatar(
+                  radius: 16,
+                  backgroundColor: Color(0XFFC4C4C4),
+                  backgroundImage: NetworkImage('https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/6ad5332ac3cc3ab5a42d1693e6b96f11-813814511665335799449/JPEG_20221009_181623_87510738303705397.jpg'),
+                )
+              ],
             ),
           ),
         ],

@@ -63,15 +63,19 @@ class ChatItem extends StatelessWidget {
                 ),
               );
             },
-            child: const CircleAvatar(
-              radius: 32,
-              backgroundColor: Color(0XFFC4C4C4),
-              backgroundImage: NetworkImage(
-                  'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/6ad5332ac3cc3ab5a42d1693e6b96f11-813814511665335799449/JPEG_20221009_181623_87510738303705397.jpg'),
+            child: Row(
+              children: [
+                const CircleAvatar(
+                  radius: 24,
+                  backgroundColor: Color(0XFFC4C4C4),
+                  backgroundImage: NetworkImage(
+                      'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/6ad5332ac3cc3ab5a42d1693e6b96f11-813814511665335799449/JPEG_20221009_181623_87510738303705397.jpg'),
+                ),
+          ],
             ),
           ), //SizedBox(height: 12),
           // Property Details and Price Container
-          const Gap(16),
+          const Gap(12),
           Container(
             child: Expanded(
               child: Column(
@@ -88,11 +92,11 @@ class ChatItem extends StatelessWidget {
                           color: const Color(0xFFC4C4C4),
                         ),
                       ),
-                      const Gap(24),
+                      const Gap(4),
                       Text(
                         timestamp,
                         style: GoogleFonts.manrope(
-                            fontSize: 10,
+                            fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: const Color(0xFF998675)),
                       ),

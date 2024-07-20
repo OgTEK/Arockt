@@ -10,12 +10,16 @@ class ProfilePage extends StatelessWidget {
             appBar: AppBar(
       leading: Title(
         color: const Color(0XFF171411),
-        child: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(
-                context); // Pops the current page and goes back to the previous one
-          },
+        child: Row(
+          children: [
+            IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(
+                    context); // Pops the current page and goes back to the previous one
+              },
+            ),
+          ],
         ),
       ),
     )));

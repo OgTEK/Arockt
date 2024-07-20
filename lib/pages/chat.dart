@@ -1,7 +1,4 @@
-import 'package:arockt/pages/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../components/chatitem.dart';
 import '../components/loc_profile.dart';

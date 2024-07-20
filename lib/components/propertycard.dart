@@ -28,7 +28,7 @@ class PropertyCardLarge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 370,
-      height: 600,
+      height: 580,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
       ),
@@ -37,7 +37,7 @@ class PropertyCardLarge extends StatelessWidget {
         children: [
           // Property Image Container
           Container(
-            height: 400,
+            height: 320,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
@@ -106,7 +106,7 @@ class PropertyCardLarge extends StatelessWidget {
           ),
           //SizedBox(height: 12),
           // Property Details and Price Container
-          const Gap(16),
+          const Gap(8),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 12),
             child: Row(
