@@ -19,59 +19,47 @@ class AgentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        border: Border(
-        ),
-      ),
-
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            height: 100,
-            width: 110,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  'assets/images/House1.png',
-                  // 'http://portfolio.asxds.com/assets/imgs/about/3/1.jpg',
-                ),
-                fit: BoxFit.cover,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          height: 120,
+          width: 140,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                'assets/images/House1.png',
+                // 'http://portfolio.asxds.com/assets/imgs/about/3/1.jpg',
               ),
-              borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
+              fit: BoxFit.cover,
             ),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
           ),
-          Gap(12),
-          Container(
-            // width: 130,
-            // height: 180,
-            // color: Color(0xFF25201C),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  Name,
-                  style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color: const Color(0xFFC4C4C4),
-                  ),
-                ),
-                Gap(4),
-                Text(
-                  rating,
-                  style: GoogleFonts.sen(
-                    fontSize: 16,
-                    color: const Color(0xFFA1A7B0),
-                  ),
-                ),
-              ],
+        ),//image
+        Gap(8),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              Name,
+              style: GoogleFonts.montserrat(
+                fontWeight: FontWeight.normal,
+                fontSize: 14,
+                color: const Color(0xFFC4C4C4),
+              ),
             ),
-          ),
-        ],
-      ),
+            Gap(36),
+            Text(
+              rating,
+              style: GoogleFonts.sen(
+                fontSize: 12,
+                color: const Color(0XFFFFD178),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

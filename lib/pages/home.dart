@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import '../components/favpropertycard.dart';
+import '../components/grid_property_card.dart';
 import '/components/propertycard.dart';
 import '/components/searchandfilter.dart';
 import '/components/loc_profile.dart';
@@ -13,7 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const DefaultTabController(
-      length: 5, // Number of tabs
+      length: 6, // Number of tabs
       child: SafeArea(
         child: Scaffold(
           body: Padding(
@@ -25,18 +27,22 @@ class HomePage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 12),
                   child: TabBar(
-                    indicatorColor: Color(0XFFC4C4C4),
-                    unselectedLabelColor: Color(0XFFC4C4C4),
+                    indicatorColor: Color(0XFF998675),
+                    unselectedLabelColor:
+                        Color(0XFFC4C4C4), //  color: const Color(0XFF25201C),
+
                     labelColor: Color(0XFFC4C4C4),
                     tabAlignment: TabAlignment.start,
                     isScrollable:
                         true, // Allows scrolling if there are many tabs
                     tabs: [
                       Tab(text: 'Best'),
-                      Tab(text: 'Popular'),
-                      Tab(text: 'Immediate'),
-                      Tab(text: 'New'),
-                      Tab(text: 'Profitable'),
+                      Tab(text: '1 Bedroom'),
+                      Tab(text: '2 Bedroom'),
+                      Tab(text: '3 Bedroom'),
+                      Tab(text: 'Selfcon'),
+                      Tab(text: 'Shortlets'),
+                      // Tab(text: 'Popular'),
                     ],
                   ),
                 ), //tabs setup and styles
@@ -48,6 +54,7 @@ class HomePage extends StatelessWidget {
                       ImmediateTab(),
                       NewTab(),
                       ProfitableTab(),
+                      NotificationsTab()
                     ],
                   ),
                 ),
@@ -70,13 +77,14 @@ class BestTab extends StatelessWidget {
         children: [
           CarouselSlider(
               options: CarouselOptions(
-                height: 490.0,
+                height: 450.0,
                 enableInfiniteScroll: true,
                 autoPlay: true,
                 enlargeCenterPage: true,
                 viewportFraction: 0.8,
                 aspectRatio: 16 / 9,
                 initialPage: 0,
+                enlargeFactor: 0.2,
               ),
               items: List.generate(8, (index) {
                 return Builder(builder: (BuildContext) {
@@ -92,7 +100,7 @@ class BestTab extends StatelessWidget {
                   );
                 });
               })),
-          Gap(24),
+          Gap(2),
           Container(
             height: 164,
             child: ListView.builder(
@@ -112,7 +120,6 @@ class BestTab extends StatelessWidget {
             ),
           ),
           Gap(24),
-
         ],
       ),
     );
@@ -151,7 +158,50 @@ class ImmediateTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('Immediate Content'));
+    // return ListView.builder(
+    //   itemCount: 4,
+    //   scrollDirection: Axis.vertical,
+    //   itemBuilder: (context, index) {
+    //     return Padding(
+    //       padding: const EdgeInsets.only(left: 16),
+    //       child: GridPropertyCard(
+    //         index: index,
+    //         propertyName: "Seaside, Vista Lodge",
+    //         rating: '4.5',
+    //         rooms: "6 bedrooms",
+    //         price: "1,920",
+    //         tenure: "per month",
+    //         propertyImage: "House1.png",
+    //         size: "714m2", address: '',
+    //       ),
+    //     );
+    //   },
+    // );
+
+    return Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.75,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+          ),
+          itemCount: 11,
+          itemBuilder: (context, index) {
+            return GridPropertyCard(
+              index: index,
+              propertyName: "Seaside, Vista Lodge",
+              rating: '4.5',
+              rooms: "6 bedrooms",
+              price: "1,920",
+              tenure: "per month",
+              propertyImage: "House1.png",
+              size: "714m2",
+              address: '',
+            );
+          },
+        ));
   }
 }
 
@@ -160,7 +210,30 @@ class NewTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('New Content'));
+    return Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.75,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+          ),
+          itemCount: 12,
+          itemBuilder: (context, index) {
+            return GridPropertyCard(
+              index: index,
+              propertyName: "Seaside, Vista Lodge",
+              rating: '4.5',
+              rooms: "6 bedrooms",
+              price: "1,920",
+              tenure: "per month",
+              propertyImage: "House1.png",
+              size: "714m2",
+              address: '',
+            );
+          },
+        ));
   }
 }
 
@@ -169,6 +242,61 @@ class ProfitableTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('Profitable Content'));
+    return Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.75,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+          ),
+          itemCount: 12,
+          itemBuilder: (context, index) {
+            return GridPropertyCard(
+              index: index,
+              propertyName: "Seaside, Vista Lodge",
+              rating: '4.5',
+              rooms: "6 bedrooms",
+              price: "1,920",
+              tenure: "per month",
+              propertyImage: "House1.png",
+              size: "714m2",
+              address: '',
+            );
+          },
+        ));
+  }
+}
+
+class NotificationsTab extends StatelessWidget {
+  const NotificationsTab({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.75,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+          ),
+          itemCount: 13,
+          itemBuilder: (context, index) {
+            return GridPropertyCard(
+              index: index,
+              propertyName: "Seaside, Vista Lodge",
+              rating: '4.5',
+              rooms: "6 bedrooms",
+              price: "1,920",
+              tenure: "per month",
+              propertyImage: "House1.png",
+              size: "714m2",
+              address: '',
+            );
+          },
+        ));
   }
 }
