@@ -207,6 +207,7 @@
 //   }
 // }
 
+import 'package:arockt/pages/notifications.dart';
 import 'package:flutter/material.dart';
 import 'pages/home.dart';
 import 'pages/favourite.dart';
@@ -239,12 +240,10 @@ class MyApp extends StatelessWidget {
         primary: Color(0xFFF9F9FB),
         secondary: Color(0xFF998675),
         surface: Color(0xFFFFFFFF),
-        background: Color(0xFFF9F9FB),
         error: Color(0xFFB00020),
         onPrimary: Color(0xFFFFFFFF),
         onSecondary: Color(0xFF000000),
         onSurface: Color(0xFF000000),
-        onBackground: Color(0xFF464646),
         onError: Color(0xFFFFFFFF),
       ),
       useMaterial3: true,
@@ -260,13 +259,11 @@ class MyApp extends StatelessWidget {
       colorScheme: const ColorScheme.dark(
         primary: Color(0xFF171411), // Deep Purple
         secondary: Color(0xFF998675), // Amber
-        surface: Color(0xFF25201C), // Dark Grey
-        background: Color(0xFF171411), // Custom dark background
+        surface: Color(0xFF171411),
         error: Color(0xFFCF6679), // Light Red
         onPrimary: Color(0xFFFFFFFF), // White
         onSecondary: Color(0xFF000000), // Black
         onSurface: Color(0xFFCED0D4), // White
-        onBackground: Color(0xFFC4C4C4), // White
         onError: Color(0xFF000000), // Black
       ),
       useMaterial3: true,
@@ -294,6 +291,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const ChatsPage(),
     const SettingsPage(),
     const ProfilePage(),
+    const NotificationsPage(),
 
   ];
 

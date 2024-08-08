@@ -17,7 +17,7 @@ class SearchFilter extends StatelessWidget {
               child: Container(
                 height: 48,
                 decoration: BoxDecoration(
-                  color: const Color(0XFF25201C),
+                  color: Color(0XFF25201C), //Theme.of(context).colorScheme.onSurface,  // Using theme color
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(12),            ),
                 child: Padding(

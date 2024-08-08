@@ -36,7 +36,7 @@ class AgentCard extends StatelessWidget {
             borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
           ),
         ),//image
-        Gap(8),
+        const Gap(8),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -49,7 +49,7 @@ class AgentCard extends StatelessWidget {
                 color: const Color(0xFFC4C4C4),
               ),
             ),
-            Gap(36),
+            const Gap(36),
             Text(
               rating,
               style: GoogleFonts.sen(

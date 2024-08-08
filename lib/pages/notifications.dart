@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../components/chatitem.dart';
 import '../components/loc_profile.dart';
 
-class ChatsPage extends StatefulWidget {
-  const ChatsPage({super.key});
+class NotificationsPage extends StatefulWidget {
+  const NotificationsPage({super.key});
 
   @override
-  State<ChatsPage> createState() => _ChatsPageState();
+  State<NotificationsPage> createState() => _ChatsPageState();
 }
 
-class _ChatsPageState extends State<ChatsPage> {
+class _ChatsPageState extends State<NotificationsPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

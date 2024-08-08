@@ -3,9 +3,8 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
-import '../pages/property_detail.dart';
 
-class PropertyCardLarge extends StatelessWidget {
+class PropertyDetailCard extends StatelessWidget {
   final int index;
   final String propertyName;
   final String propertyImage;
@@ -15,7 +14,7 @@ class PropertyCardLarge extends StatelessWidget {
   final String price;
   final String rooms;
 
-  const PropertyCardLarge({
+  const PropertyDetailCard({
     super.key,
     required this.index,
     required this.propertyName,
@@ -30,18 +29,17 @@ class PropertyCardLarge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Property Image Container
           Container(
-            height: 320,
+            height: 200,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
                   'assets/images/House1.png',
-                  // 'http://portfolio.asxds.com/assets/imgs/about/3/1.jpg',
                 ),
                 fit: BoxFit.cover,
               ),

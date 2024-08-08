@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,7 +22,7 @@ class ChatItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       //alignment: Alignment.center,
       width: double.maxFinite,
       height: 60,
@@ -63,9 +61,9 @@ class ChatItem extends StatelessWidget {
                 ),
               );
             },
-            child: Row(
+            child: const Row(
               children: [
-                const CircleAvatar(
+                CircleAvatar(
                   radius: 24,
                   backgroundColor: Color(0XFFC4C4C4),
                   backgroundImage: NetworkImage(

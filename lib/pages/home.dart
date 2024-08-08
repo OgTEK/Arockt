@@ -1,12 +1,10 @@
-import 'package:flutter/cupertino.dart';
+//import 'package:carousel_slider/carousel_slider.dart'as carousel_controller;
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import '../components/favpropertycard.dart';
 import '../components/grid_property_card.dart';
 import '/components/propertycard.dart';
 import '/components/searchandfilter.dart';
 import '/components/loc_profile.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:arockt/components/agentcard.dart';
 
 class HomePage extends StatelessWidget {
@@ -75,20 +73,40 @@ class BestTab extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          CarouselSlider(
-              options: CarouselOptions(
-                height: 450.0,
-                enableInfiniteScroll: true,
-                autoPlay: true,
-                enlargeCenterPage: true,
-                viewportFraction: 0.8,
-                aspectRatio: 16 / 9,
-                initialPage: 0,
-                enlargeFactor: 0.2,
-              ),
-              items: List.generate(8, (index) {
-                return Builder(builder: (BuildContext) {
-                  return PropertyCardLarge(
+          // CarouselSlider(
+          //     options: CarouselOptions(
+          //       height: 450.0,
+          //       enableInfiniteScroll: true,
+          //       autoPlay: true,
+          //       enlargeCenterPage: true,
+          //       viewportFraction: 0.8,
+          //       aspectRatio: 16 / 9,
+          //       initialPage: 0,
+          //       enlargeFactor: 0.2,
+          //     ),
+          //     items: List.generate(8, (index) {
+          //       return Builder(builder: (BuildContext) {
+          //         return PropertyCardLarge(
+          //           index: index,
+          //           propertyName: "Seaside, Vista Lodge",
+          //           rating: '4.5',
+          //           rooms: "6 bedrooms",
+          //           price: "1,920",
+          //           tenure: "per month",
+          //           propertyImage: "House1.png",
+          //           size: "714m2",
+          //         );
+          //       });
+          //     })),
+          SizedBox(
+            height: 450,
+            child: ListView.builder(
+              itemCount: 4,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.only(left: 16),
+                  child: PropertyCardLarge(
                     index: index,
                     propertyName: "Seaside, Vista Lodge",
                     rating: '4.5',
@@ -97,18 +115,20 @@ class BestTab extends StatelessWidget {
                     tenure: "per month",
                     propertyImage: "House1.png",
                     size: "714m2",
-                  );
-                });
-              })),
-          Gap(2),
-          Container(
+                  ),
+                );
+              },
+            ),
+          ),
+          const Gap(2),
+          SizedBox(
             height: 164,
             child: ListView.builder(
               itemCount: 4,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(left: 16),
+                return const Padding(
+                  padding: EdgeInsets.only(left: 16),
                   child: AgentCard(
                     index: 3,
                     Name: "James Can",
@@ -119,9 +139,28 @@ class BestTab extends StatelessWidget {
               },
             ),
           ),
-          Gap(24),
+          const Gap(24),
         ],
       ),
+    );
+    return ListView.builder(
+      itemCount: 4,
+      scrollDirection: Axis.horizontal,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.only(left: 16),
+          child: PropertyCardLarge(
+            index: index,
+            propertyName: "Seaside, Vista Lodge",
+            rating: '4.5',
+            rooms: "6 bedrooms",
+            price: "1,920",
+            tenure: "per month",
+            propertyImage: "House1.png",
+            size: "714m2",
+          ),
+        );
+      },
     );
   }
 }

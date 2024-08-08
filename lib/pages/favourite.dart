@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:arockt/components/favpropertycard.dart';
-import '../components/searchandfilter.dart';
 import '/components/loc_profile.dart';
-import 'home.dart';
 
 class FavouritesPage extends StatelessWidget {
   const FavouritesPage({super.key});
@@ -12,10 +10,10 @@ class FavouritesPage extends StatelessWidget {
 return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 0),
+          padding: const EdgeInsets.symmetric(horizontal: 0),
           child: Column(
             children: [
-              LocProfile(),
+              const LocProfile(),
               Expanded(
                 child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
